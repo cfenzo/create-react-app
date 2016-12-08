@@ -29,6 +29,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 - [Integrating with a Node Backend](#integrating-with-a-node-backend)
 - [Proxying API Requests in Development](#proxying-api-requests-in-development)
 - [Using HTTPS in Development](#using-https-in-development)
+- [Using a Custom Port in Development](#using-a-custom-port-in-development)
 - [Generating Dynamic `<meta>` Tags on the Server](#generating-dynamic-meta-tags-on-the-server)
 - [Running Tests](#running-tests)
   - [Filename Conventions](#filename-conventions)
@@ -639,6 +640,30 @@ HTTPS=true npm start
 ```
 
 Note that the server will use a self-signed certificate, so your web browser will almost definitely display a warning upon accessing the page.
+
+## Using a Custom Port in Development
+
+>Note: this feature is available with `react-scripts@0.2.0` and higher.
+
+You may require the dev server to serve pages over a different port than 3000 (default). 
+
+To do this, set the `PORT` environment variable to your custom port, then start the dev server as usual with `npm start`:
+
+#### Windows (cmd.exe)
+
+```cmd
+set PORT=8080&&npm start
+```
+
+(Note: the lack of whitespace is intentional.)
+
+#### Linux, OS X (Bash)
+
+```bash
+PORT=8080 npm start
+```
+
+>Note: Ports below 1024 is discouraged as it require root privileges on Linux and OS X, and firewall permissions on Windows.
 
 ## Generating Dynamic `<meta>` Tags on the Server
 
